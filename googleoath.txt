@@ -1,0 +1,7 @@
+CLient id:
+
+942769808499-cdm3o10ti4u47dniv05phkcb1n0afjtp.apps.googleusercontent.com
+
+Client secret:
+
+3Ha2rzCO5uE5uxAivOmPMgsd
