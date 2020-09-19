@@ -29,5 +29,13 @@ module.exports = (app) => {
       minSleepTime,
       _user: req.user.id,
     });
+
+    try {
+      await survey.save();
+      const user = await req.user.save();
+      res.send(user);
+    } catch (err) {
+      res.status(422).send(err);
+    }
   });
 };
