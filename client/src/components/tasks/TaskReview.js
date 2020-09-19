@@ -9,11 +9,11 @@ const TaskReview = ({ onCancel, formValues, submitTask, history }) => {
       <div>
         <div>
           <label>Email:</label>
-          <div>{formValues.email}</div>
+          <div>{formValues.mainEmail}</div>
         </div>
         <div>
           <label>Recovery Email:</label>
-          <div>{formValues.recoveryemail}</div>
+          <div>{formValues.recoveryEmail}</div>
         </div>
         <div>
           <label>Password:</label>

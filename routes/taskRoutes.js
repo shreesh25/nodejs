@@ -6,21 +6,27 @@ const Tasks = mongoose.model("tasks");
 module.exports = (app) => {
   app.post("/api/tasks", requireLogin, (req, res) => {
     const {
-      email,
+      mainEmail,
+      recoveryEmail,
       password,
       securityAnswer,
       tasks,
-      runTime,
-      sleepTime,
+      maxRunTime,
+      minRunTime,
+      maxSleepTime,
+      minSleepTime,
     } = req.body;
 
     const task = new Tasks({
-      email,
+      mainEmail,
+      recoveryEmail,
       password,
       securityAnswer,
       tasks,
-      runTime,
-      sleepTime,
+      maxRunTime,
+      minRunTime,
+      maxSleepTime,
+      minSleepTime,
       _user: req.user.id,
     });
   });

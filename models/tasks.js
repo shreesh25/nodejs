@@ -3,21 +3,19 @@ const { Schema } = mongoose;
 require("mongoose-type-email");
 
 const taskSchema = new Schema({
-  email: {
-    mainEmail: { type: mongoose.SchemaTypes.Email, required: true },
-    recoveryEmail: { type: mongoose.SchemaTypes.Email, require: true },
-  },
+  mainEmail: { type: String, required: true },
+  recoveryEmail: { type: String, require: true },
+
   password: { type: String, required: true },
   securityAnswer: { type: String, required: true },
   tasks: { type: [String], required: true },
-  runTime: {
-    maxRunTime: { type: Number, default: 0 },
-    minRunTime: { type: Number, default: 0 },
-  },
-  sleepTime: {
-    maxSleepTime: { type: Number, default: 0 },
-    minSleepTime: { type: Number, default: 0 },
-  },
+
+  maxRunTime: { type: Number, default: 0 },
+  minRunTime: { type: Number, default: 0 },
+
+  maxSleepTime: { type: Number, default: 0 },
+  minSleepTime: { type: Number, default: 0 },
+
   _user: { type: Schema.Types.ObjectId, ref: "users" },
 });
 

@@ -7,11 +7,16 @@ class TaskForm extends Component {
   renderFields() {
     return (
       <div>
-        <Field label="Email" type="text" name="email" component={TaskFields} />
+        <Field
+          label="Email"
+          type="text"
+          name="mainEmail"
+          component={TaskFields}
+        />
         <Field
           label="Recovery Email"
           type="text"
-          name="recoveryemail"
+          name="recoveryEmail"
           component={TaskFields}
         />
         <Field
