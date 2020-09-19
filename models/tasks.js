@@ -9,9 +9,16 @@ const taskSchema = new Schema({
   },
   password: { type: String, required: true },
   securityAnswer: { type: String, required: true },
-  tasks: { type: String, required: true },
-  runTime: { maxRunTime: Number, minRunTime: Number },
-  sleepTime: { maxSleepTime: Number, minSleepTime: Number },
+  tasks: { type: [String], required: true },
+  runTime: {
+    maxRunTime: { type: Number, default: 0 },
+    minRunTime: { type: Number, default: 0 },
+  },
+  sleepTime: {
+    maxSleepTime: { type: Number, default: 0 },
+    minSleepTime: { type: Number, default: 0 },
+  },
+  _user: { type: Schema.Types.ObjectId, ref: "users" },
 });
 
-mongoose.model("tasks", tashSchema);
+mongoose.model("tasks", taskSchema);
