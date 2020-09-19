@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { reduxForm, Field } from "redux-form";
 import TaskFields from "./TaskFields";
 import { Link } from "react-router-dom";
+
 class TaskForm extends Component {
   renderFields() {
     return (
@@ -25,7 +26,7 @@ class TaskForm extends Component {
           name="securityAnswer"
           component={TaskFields}
         />
-        <Field label="Tasks" type="text" name="Task" component={TaskFields} />
+        <Field label="Tasks" type="text" name="tasks" component={TaskFields} />
         <Field
           label="Max Run time"
           type="text"
@@ -56,9 +57,7 @@ class TaskForm extends Component {
   render() {
     return (
       <div>
-        <form
-          onSubmit={this.props.handleSubmit((values) => console.log(values))}
-        >
+        <form onSubmit={this.props.handleSubmit(this.props.onTaskSubmit)}>
           {this.renderFields()}
           <Link to="/tasks" className="red btn-flat white-text">
             Cancel
@@ -74,4 +73,5 @@ class TaskForm extends Component {
 
 export default reduxForm({
   form: "taskForm",
+  destroyOnUnmount: false,
 })(TaskForm);
