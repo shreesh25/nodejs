@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { reduxForm, Field } from "redux-form";
 import TaskFields from "./TaskFields";
+import { Link } from "react-router-dom";
 class TaskForm extends Component {
   renderFields() {
     return (
@@ -59,7 +60,12 @@ class TaskForm extends Component {
           onSubmit={this.props.handleSubmit((values) => console.log(values))}
         >
           {this.renderFields()}
-          <button type="submit">Create</button>
+          <Link to="/tasks" className="red btn-flat white-text">
+            Cancel
+          </Link>
+          <button type="submit" className="teal btn-flat right white-text">
+            Create<i className="material-icons right">done</i>
+          </button>
         </form>
       </div>
     );
