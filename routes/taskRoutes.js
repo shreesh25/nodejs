@@ -31,7 +31,7 @@ module.exports = (app) => {
     });
 
     try {
-      await survey.save();
+      await task.save();
       const user = await req.user.save();
       res.send(user);
     } catch (err) {
