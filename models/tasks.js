@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
-require("mongoose-type-email");
 
 const taskSchema = new Schema({
   mainEmail: { type: String, required: true },
@@ -16,7 +15,7 @@ const taskSchema = new Schema({
   maxSleepTime: { type: Number, default: 0 },
   minSleepTime: { type: Number, default: 0 },
 
-  _user: { type: Schema.Types.ObjectId, ref: "users" },
+  _user: { type: Schema.Types.ObjectId, ref: "user" },
 });
 
 mongoose.model("tasks", taskSchema);
