@@ -4,7 +4,7 @@ const requireLogin = require("../middlewares/requireLogin");
 const Tasks = mongoose.model("tasks");
 
 module.exports = (app) => {
-  app.post("/api/tasks", requireLogin, (req, res) => {
+  app.post("/api/tasks", requireLogin, async (req, res) => {
     const {
       mainEmail,
       recoveryEmail,
@@ -30,7 +30,7 @@ module.exports = (app) => {
       _user: req.user.id,
     });
 
-    task.save();
+    await task.save();
     // try {
     //
     // } catch (err) {
