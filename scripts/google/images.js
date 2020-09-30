@@ -1,11 +1,16 @@
 const GoogleImages = require("google-images");
 
-const client = new GoogleImages("CSE ID", "API KEY");
+const client = new GoogleImages(
+  "0da6dce7ebad9fa37",
+  "AIzaSyDyVQpbNKBwQfh6jJ4HzMhJtHPvMvoqUgU"
+);
 
 client
-  .search("") //searh term
-  .then((images) => {});
+  .search("anime") //searh term
+  .then((images) => {
+    console.log(images);
+  });
 
-client.search("", { page: 2 });
+//client.search("", { page: 2 });
 
-client.search("", { size: "large" });
+//client.search("", { size: "large" });

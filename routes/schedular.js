@@ -1,5 +1,5 @@
 const cron = require("node-cron");
-var tasks = " ";
+var task = "";
 
 module.exports = (app) => {
   app.get("/app/schedulejob", (req, res, next) => {

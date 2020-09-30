@@ -9,6 +9,6 @@ export const fetchUser = () =>
 
 export const submitTask = (values, history) => async (dispatch) => {
   const res = await axios.post("/api/tasks", values);
-  history.push("/tasks");
   dispatch({ type: FETCH_USER, payload: res.data });
+  history.push("/tasks");
 };
