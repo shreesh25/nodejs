@@ -31,6 +31,7 @@ require("./routes/authRoutes")(app);
 require("./routes/taskRoutes")(app);
 require("./routes/schedular")(app);
 require("./routes/googleServices")(app);
+require("./routes/proxyRoutes")(app);
 
 if (process.env.NODE_ENV === "production") {
   //Express will serve up production assets

@@ -15,7 +15,7 @@ module.exports = (app) => {
     );
 
     client
-      .search("anime") //searh term
+      .search("cars") //searh term
       .then((images) => {
         console.log(images);
       });
